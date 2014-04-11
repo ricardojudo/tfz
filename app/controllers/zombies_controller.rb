@@ -1,5 +1,5 @@
 class ZombiesController < ApplicationController
-  before_action :set_zombie , only:[:show,:edit,:update,:destroy]
+  before_action :set_zombie , only:[:show,:edit,:update,:destroy  ]
   def new
     @zombie=Zombie.new
   end
@@ -54,6 +54,6 @@ class ZombiesController < ApplicationController
   end
 
   def zombie_params
-    params.require(:zombie).permit(:name)
+    params.require(:zombie).permit(:name, :email, :password, :username)
   end
 end

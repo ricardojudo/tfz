@@ -1,6 +1,27 @@
 
+<div>
+<h1><%= @zombie.name%></h1>
+</div>
 
-<%= @zombie.name%>
+<div>
+	<%= @zombie.username%>	
+</div>
 
+<div>
+	<%= @zombie.email%>	
+</div>
+
+
+<br/>
 <%= link_to 'Edit', edit_zombie_path(@zombie) %> |
 <%= link_to 'Back', zombies_path %>
+<br/>
+
+
+
+<% if @zombie.tweets.count == 0%>
+	<em>No tweets</em>
+<% else %>	
+	<em><%= @zombie.tweets.count %> tweets</em>
+<%end%>
+
